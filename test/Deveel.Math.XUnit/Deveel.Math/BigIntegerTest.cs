@@ -8,38 +8,38 @@ public class BigIntegerTest
 {
     public BigIntegerTest()
     {
-        twoToTheSeventy = BigMath.Pow(two, 70);
+        TwoToTheSeventy = BigMath.Pow(Two, 70);
         SetUp();
     }
 
-    private readonly BigInteger minusTwo = BigInteger.Parse("-2", 10);
+    private readonly BigInteger MinusTwo = BigInteger.Parse("-2", 10);
 
-    private readonly BigInteger minusOne = BigInteger.Parse("-1", 10);
+    private readonly BigInteger MinusOne = BigInteger.Parse("-1", 10);
 
-    private readonly BigInteger zero = BigInteger.Parse("0", 10);
+    private readonly BigInteger Zero = BigInteger.Parse("0", 10);
 
-    private readonly BigInteger one = BigInteger.Parse("1", 10);
+    private readonly BigInteger One = BigInteger.Parse("1", 10);
 
-    private readonly BigInteger two = BigInteger.Parse("2", 10);
+    private readonly BigInteger Two = BigInteger.Parse("2", 10);
 
-    private readonly BigInteger ten = BigInteger.Parse("10", 10);
+    private readonly BigInteger Ten = BigInteger.Parse("10", 10);
 
-    private readonly BigInteger sixteen = BigInteger.Parse("16", 10);
+    private readonly BigInteger Sixteen = BigInteger.Parse("16", 10);
 
     public BigIntegerTest(BigInteger sixteen)
     {
-        this.sixteen = sixteen;
+        this.Sixteen = sixteen;
     }
 
-    private readonly BigInteger oneThousand = BigInteger.Parse("1000", 10);
+    private readonly BigInteger OneThousand = BigInteger.Parse("1000", 10);
 
-    private readonly BigInteger aZillion = BigInteger.Parse("100000000000000000000000000000000000000000000000000", 10);
+    private readonly BigInteger AZillion = BigInteger.Parse("100000000000000000000000000000000000000000000000000", 10);
 
-    private readonly BigInteger twoToTheTen = BigInteger.Parse("1024", 10);
+    private readonly BigInteger TwoToTheTen = BigInteger.Parse("1024", 10);
 
-    private readonly BigInteger twoToTheSeventy;
+    private readonly BigInteger TwoToTheSeventy;
 
-    private Random rand = new();
+    private Random Rand = new();
 
     private BigInteger bi;
 
@@ -119,23 +119,23 @@ public class BigIntegerTest
         // regression test for HARMONY-1047
         Assert.Throws<OverflowException>(() => new BigInteger(Int32.MaxValue, (Random)null));
 
-        bi = new BigInteger(70, rand);
-        bi2 = new BigInteger(70, rand);
-        Assert.True(bi.CompareTo(zero) >= 0, "Random number is negative");
-        Assert.True(bi.CompareTo(twoToTheSeventy) < 0, "Random number is too big");
+        bi = new BigInteger(70, Rand);
+        bi2 = new BigInteger(70, Rand);
+        Assert.True(bi.CompareTo(Zero) >= 0, "Random number is negative");
+        Assert.True(bi.CompareTo(TwoToTheSeventy) < 0, "Random number is too big");
         Assert.True(!bi.Equals(bi2), "Two random numbers in a row are the same (might not be a bug but it very likely is)");
-        Assert.True(new BigInteger(0, rand).Equals(BigInteger.Zero), "Not zero");
+        Assert.True(new BigInteger(0, Rand).Equals(BigInteger.Zero), "Not zero");
     }
 
     [Fact]
     public void CostructorIIRandom()
     {
-        bi = new BigInteger(10, 5, rand);
-        bi2 = new BigInteger(10, 5, rand);
-        Assert.True(bi.CompareTo(zero) >= 0, "Random number one is negative");
-        Assert.True(bi.CompareTo(twoToTheTen) < 0, "Random number one is too big");
-        Assert.True(bi2.CompareTo(zero) >= 0, "Random number two is negative");
-        Assert.True(bi2.CompareTo(twoToTheTen) < 0, "Random number two is too big");
+        bi = new BigInteger(10, 5, Rand);
+        bi2 = new BigInteger(10, 5, Rand);
+        Assert.True(bi.CompareTo(Zero) >= 0, "Random number one is negative");
+        Assert.True(bi.CompareTo(TwoToTheTen) < 0, "Random number one is too big");
+        Assert.True(bi2.CompareTo(Zero) >= 0, "Random number two is negative");
+        Assert.True(bi2.CompareTo(TwoToTheTen) < 0, "Random number two is too big");
 
         Random rand_b = new();
         BigInteger bi_b;
@@ -155,10 +155,10 @@ public class BigIntegerTest
     {
         var myByteArray = new byte[] { (byte)0x00, (byte)0xFF, (byte)0xFE };
         bi = new BigInteger(myByteArray);
-        Assert.True(bi.Equals(BigInteger.SetBit(BigInteger.Zero, 16) - two), "Incorrect value for pos number");
+        Assert.True(bi.Equals(BigInteger.SetBit(BigInteger.Zero, 16) - Two), "Incorrect value for pos number");
         myByteArray = new byte[] { (byte)0xFF, (byte)0xFE };
         bi = new BigInteger(myByteArray);
-        Assert.True(bi.Equals(minusTwo), "Incorrect value for neg number");
+        Assert.True(bi.Equals(MinusTwo), "Incorrect value for neg number");
     }
 
     [Fact]
@@ -166,12 +166,12 @@ public class BigIntegerTest
     {
         var myByteArray = new byte[] { (byte)0xFF, (byte)0xFE };
         bi = new BigInteger(1, myByteArray);
-        Assert.True(bi.Equals(BigInteger.SetBit(BigInteger.Zero, 16) - two), "Incorrect value for pos number");
+        Assert.True(bi.Equals(BigInteger.SetBit(BigInteger.Zero, 16) - Two), "Incorrect value for pos number");
         bi = new BigInteger(-1, myByteArray);
-        Assert.True(bi.Equals(-(BigInteger.SetBit(BigInteger.Zero, 16) - two)), "Incorrect value for neg number");
+        Assert.True(bi.Equals(-(BigInteger.SetBit(BigInteger.Zero, 16) - Two)), "Incorrect value for neg number");
         myByteArray = new byte[] { (byte)0, (byte)0 };
         bi = new BigInteger(0, myByteArray);
-        Assert.True(bi.Equals(zero), "Incorrect value for zero");
+        Assert.True(bi.Equals(Zero), "Incorrect value for zero");
         myByteArray = new byte[] { (byte)1 };
 
         Assert.Throws<FormatException>(() => new BigInteger(0, myByteArray));
@@ -199,7 +199,7 @@ public class BigIntegerTest
     public void IsProbablePrimeI()
     {
         int fails = 0;
-        bi = new BigInteger(20, 20, rand);
+        bi = new BigInteger(20, 20, Rand);
         if (!BigInteger.IsProbablePrime(bi, 17))
         {
             fails++;
@@ -230,7 +230,7 @@ public class BigIntegerTest
         }
         for (int a = 0; a < 1000; a++)
         {
-            bi = (BigInteger.FromInt64(rand.Next(1000000)) * BigInteger.FromInt64(rand.Next(1000000)));
+            bi = (BigInteger.FromInt64(Rand.Next(1000000)) * BigInteger.FromInt64(Rand.Next(1000000)));
             if (BigInteger.IsProbablePrime(bi, 17))
             {
 #if !PORTABLE
@@ -241,7 +241,7 @@ public class BigIntegerTest
         }
         for (int a = 0; a < 200; a++)
         {
-            bi = new BigInteger(70, rand) * new BigInteger(70, rand);
+            bi = new BigInteger(70, Rand) * new BigInteger(70, Rand);
             if (BigInteger.IsProbablePrime(bi, 17))
             {
 #if !PORTABLE
@@ -257,11 +257,11 @@ public class BigIntegerTest
     [Fact]
     public void EqualsObject()
     {
-        Assert.True(zero.Equals(BigInteger.FromInt64(0)), "0=0");
+        Assert.True(Zero.Equals(BigInteger.FromInt64(0)), "0=0");
         Assert.True(BigInteger.FromInt64(-123).Equals(BigInteger.FromInt64(-123)), "-123=-123");
-        Assert.True(!zero.Equals(one), "0=1");
-        Assert.True(!zero.Equals(minusOne), "0=-1");
-        Assert.True(!one.Equals(minusOne), "1=-1");
+        Assert.True(!Zero.Equals(One), "0=1");
+        Assert.True(!Zero.Equals(MinusOne), "0=-1");
+        Assert.True(!One.Equals(MinusOne), "1=-1");
         Assert.True(bi3.Equals(bi3), "bi3=bi3");
         Assert.True(bi3.Equals(-(-bi3)), "bi3=copy of bi3");
         Assert.True(!bi3.Equals(bi2), "bi3=bi2");
@@ -270,40 +270,40 @@ public class BigIntegerTest
     [Fact]
     public void CompareToBigInteger()
     {
-        Assert.True(one.CompareTo(two) < 0, "Smaller number returned >= 0");
-        Assert.True(two.CompareTo(one) > 0, "Larger number returned >= 0");
-        Assert.True(one.CompareTo(one) == 0, "Equal numbers did not return 0");
-        Assert.True((-two).CompareTo(one) < 0, "Neg number messed things up");
+        Assert.True(One.CompareTo(Two) < 0, "Smaller number returned >= 0");
+        Assert.True(Two.CompareTo(One) > 0, "Larger number returned >= 0");
+        Assert.True(One.CompareTo(One) == 0, "Equal numbers did not return 0");
+        Assert.True((-Two).CompareTo(One) < 0, "Neg number messed things up");
     }
 
     [Fact]
     public void CompareToBigInteger_Op()
     {
-        Assert.True(one < two, "Smaller number returned >= 0");
-        Assert.True(two > 0, "Larger number returned >= 0");
-        Assert.True(one == one, "Equal numbers did not return 0");
-        Assert.True(-two < 0, "Neg number messed things up");
+        Assert.True(One < Two, "Smaller number returned >= 0");
+        Assert.True(Two > 0, "Larger number returned >= 0");
+        Assert.True(One == One, "Equal numbers did not return 0");
+        Assert.True(-Two < 0, "Neg number messed things up");
     }
 
 
     [Fact]
     public void ToInt32()
     {
-        Assert.True(twoToTheSeventy.ToInt32() == 0, "Incorrect ToInt32 for 2**70");
-        Assert.True(two.ToInt32() == 2, "Incorrect ToInt32 for 2");
+        Assert.True(TwoToTheSeventy.ToInt32() == 0, "Incorrect ToInt32 for 2**70");
+        Assert.True(Two.ToInt32() == 2, "Incorrect ToInt32 for 2");
     }
 
     [Fact]
     public void ToInt64()
     {
-        Assert.True(twoToTheSeventy.ToInt64() == 0, "Incorrect ToInt64 for 2**70");
-        Assert.True(two.ToInt64() == 2, "Incorrect ToInt64 for 2");
+        Assert.True(TwoToTheSeventy.ToInt64() == 0, "Incorrect ToInt64 for 2**70");
+        Assert.True(Two.ToInt64() == 2, "Incorrect ToInt64 for 2");
     }
 
     [Fact]
     public void ValueOfJ()
     {
-        Assert.True(BigInteger.FromInt64(2L).Equals(two), "Incurred number returned for 2");
+        Assert.True(BigInteger.FromInt64(2L).Equals(Two), "Incurred number returned for 2");
         Assert.True(BigInteger.FromInt64(200L).Equals(BigInteger.FromInt64(139) + (BigInteger.FromInt64(61))),
                       "Incurred number returned for 200");
     }
@@ -311,21 +311,21 @@ public class BigIntegerTest
     [Fact]
     public void AddBigInteger()
     {
-        Assert.True((aZillion + aZillion + (-aZillion)).Equals(aZillion), "Incorrect sum--wanted a zillion");
-        Assert.True((zero + zero).Equals(zero), "0+0");
-        Assert.True((zero + one).Equals(one), "0+1");
-        Assert.True((one + zero).Equals(one), "1+0");
-        Assert.True((one + one).Equals(two), "1+1");
-        Assert.True((zero + minusOne).Equals(minusOne), "0+(-1)");
-        Assert.True((minusOne + zero).Equals(minusOne), "(-1)+0");
-        Assert.True((minusOne + minusOne).Equals(minusTwo), "(-1)+(-1)");
-        Assert.True((one + minusOne).Equals(zero), "1+(-1)");
-        Assert.True((minusOne + one).Equals(zero), "(-1)+1");
+        Assert.True((AZillion + AZillion + (-AZillion)).Equals(AZillion), "Incorrect sum--wanted a zillion");
+        Assert.True((Zero + Zero).Equals(Zero), "0+0");
+        Assert.True((Zero + One).Equals(One), "0+1");
+        Assert.True((One + Zero).Equals(One), "1+0");
+        Assert.True((One + One).Equals(Two), "1+1");
+        Assert.True((Zero + MinusOne).Equals(MinusOne), "0+(-1)");
+        Assert.True((MinusOne + Zero).Equals(MinusOne), "(-1)+0");
+        Assert.True((MinusOne + MinusOne).Equals(MinusTwo), "(-1)+(-1)");
+        Assert.True((One + MinusOne).Equals(Zero), "1+(-1)");
+        Assert.True((MinusOne + One).Equals(Zero), "(-1)+1");
 
         for (int i = 0; i < 200; i++)
         {
-            BigInteger midbit = BigInteger.SetBit(zero, i);
-            Assert.True((midbit + midbit).Equals(BigInteger.SetBit(zero, i + 1)), "add fails to carry on bit " + i);
+            BigInteger midbit = BigInteger.SetBit(Zero, i);
+            Assert.True((midbit + midbit).Equals(BigInteger.SetBit(Zero, i + 1)), "add fails to carry on bit " + i);
         }
 
         BigInteger bi2p3 = bi2 + bi3;
@@ -336,57 +336,57 @@ public class BigIntegerTest
     [Fact]
     public void Negate()
     {
-        Assert.True((-zero).Equals(zero), "Single negation of zero did not result in zero");
-        Assert.True(!(-aZillion).Equals(aZillion), "Single negation resulted in original nonzero number");
-        Assert.True((-(-aZillion)).Equals(aZillion), "Double negation did not result in original number");
+        Assert.True((-Zero).Equals(Zero), "Single negation of zero did not result in zero");
+        Assert.True(!(-AZillion).Equals(AZillion), "Single negation resulted in original nonzero number");
+        Assert.True((-(-AZillion)).Equals(AZillion), "Double negation did not result in original number");
 
-        Assert.True((-zero).Equals(zero), "0.neg");
-        Assert.True((-one).Equals(minusOne), "1.neg");
-        Assert.True((-two).Equals(minusTwo), "2.neg");
-        Assert.True((-minusOne).Equals(one), "-1.neg");
-        Assert.True((-minusTwo).Equals(two), "-2.neg");
+        Assert.True((-Zero).Equals(Zero), "0.neg");
+        Assert.True((-One).Equals(MinusOne), "1.neg");
+        Assert.True((-Two).Equals(MinusTwo), "2.neg");
+        Assert.True((-MinusOne).Equals(One), "-1.neg");
+        Assert.True((-MinusTwo).Equals(Two), "-2.neg");
         Assert.True(
             unchecked((-BigInteger.FromInt64(0x62EB40FEF85AA9EBL * 2)).Equals(BigInteger.FromInt64(-0x62EB40FEF85AA9EBL * 2))),
             "0x62EB40FEF85AA9EBL*2.neg");
         for (int i = 0; i < 200; i++)
         {
-            BigInteger midbit = BigInteger.SetBit(zero, i);
+            BigInteger midbit = BigInteger.SetBit(Zero, i);
             BigInteger negate = -midbit;
             Assert.True((-negate).Equals(midbit), "negate negate");
-            Assert.True(((-midbit) + midbit).Equals(zero), "neg fails on bit " + i);
+            Assert.True(((-midbit) + midbit).Equals(Zero), "neg fails on bit " + i);
         }
     }
 
     [Fact]
     public void Signum()
     {
-        Assert.True(two.Sign == 1, "Wrong positive signum");
-        Assert.True(zero.Sign == 0, "Wrong zero signum");
-        Assert.True((-zero).Sign == 0, "Wrong neg zero signum");
-        Assert.True((-two).Sign == -1, "Wrong neg signum");
+        Assert.True(Two.Sign == 1, "Wrong positive signum");
+        Assert.True(Zero.Sign == 0, "Wrong zero signum");
+        Assert.True((-Zero).Sign == 0, "Wrong neg zero signum");
+        Assert.True((-Two).Sign == -1, "Wrong neg signum");
     }
 
     [Fact]
     public void Abs()
     {
-        Assert.True(BigMath.Abs(-aZillion).Equals(BigMath.Abs(aZillion)), "Invalid number returned for zillion");
-        Assert.True(BigMath.Abs(-zero).Equals(zero), "Invalid number returned for zero neg");
-        Assert.True(BigMath.Abs(zero).Equals(zero), "Invalid number returned for zero");
-        Assert.True(BigMath.Abs(-two).Equals(two), "Invalid number returned for two");
+        Assert.True(BigMath.Abs(-AZillion).Equals(BigMath.Abs(AZillion)), "Invalid number returned for zillion");
+        Assert.True(BigMath.Abs(-Zero).Equals(Zero), "Invalid number returned for zero neg");
+        Assert.True(BigMath.Abs(Zero).Equals(Zero), "Invalid number returned for zero");
+        Assert.True(BigMath.Abs(-Two).Equals(Two), "Invalid number returned for two");
     }
 
     [Fact]
     public void PowI()
     {
-        Assert.True(BigMath.Pow(two, 10).Equals(twoToTheTen), "Incorrect exponent returned for 2**10");
-        Assert.True((BigMath.Pow(two, 30) * BigMath.Pow(two, 40)).Equals(twoToTheSeventy), "Incorrect exponent returned for 2**70");
-        Assert.True(BigMath.Pow(ten, 50).Equals(aZillion), "Incorrect exponent returned for 10**50");
+        Assert.True(BigMath.Pow(Two, 10).Equals(TwoToTheTen), "Incorrect exponent returned for 2**10");
+        Assert.True((BigMath.Pow(Two, 30) * BigMath.Pow(Two, 40)).Equals(TwoToTheSeventy), "Incorrect exponent returned for 2**70");
+        Assert.True(BigMath.Pow(Ten, 50).Equals(AZillion), "Incorrect exponent returned for 10**50");
     }
 
     [Fact]
     public void MmodInverseBigInteger()
     {
-        BigInteger a = zero, mod, inv;
+        BigInteger a = Zero, mod, inv;
         for (int j = 3; j < 50; j++)
         {
             mod = BigInteger.FromInt64(j);
@@ -396,13 +396,13 @@ public class BigIntegerTest
                 {
                     a = BigInteger.FromInt64(i);
                     inv = BigMath.ModInverse(a, mod);
-                    Assert.True(one.Equals(((a * inv) % mod)), "bad inverse: " + a + " inv mod " + mod + " equals " + inv);
+                    Assert.True(One.Equals(((a * inv) % mod)), "bad inverse: " + a + " inv mod " + mod + " equals " + inv);
                     Assert.True(inv.CompareTo(mod) < 0, "inverse greater than modulo: " + a + " inv mod " + mod + " equals " + inv);
                     Assert.True(inv.CompareTo(BigInteger.Zero) >= 0, "inverse less than zero: " + a + " inv mod " + mod + " equals " + inv);
                 }
                 catch (ArithmeticException)
                 {
-                    Assert.True(!one.Equals(BigMath.Gcd(a, mod)), "should have found inverse for " + a + " mod " + mod);
+                    Assert.True(!One.Equals(BigMath.Gcd(a, mod)), "should have found inverse for " + a + " mod " + mod);
                 }
             }
         }
@@ -415,13 +415,13 @@ public class BigIntegerTest
                 {
                     a = bi3 + (BigInteger.FromInt64(i));
                     inv = BigMath.ModInverse(a, mod);
-                    Assert.True(one.Equals((a * inv) % mod), "bad inverse: " + a + " inv mod " + mod + " equals " + inv);
+                    Assert.True(One.Equals((a * inv) % mod), "bad inverse: " + a + " inv mod " + mod + " equals " + inv);
                     Assert.True(inv.CompareTo(mod) < 0, "inverse greater than modulo: " + a + " inv mod " + mod + " equals " + inv);
                     Assert.True(inv.CompareTo(BigInteger.Zero) >= 0, "inverse less than zero: " + a + " inv mod " + mod + " equals " + inv);
                 }
                 catch (ArithmeticException)
                 {
-                    Assert.True(!one.Equals(BigMath.Gcd(a, mod)), "should have found inverse for " + a + " mod " + mod);
+                    Assert.True(!One.Equals(BigMath.Gcd(a, mod)), "should have found inverse for " + a + " mod " + mod);
                 }
             }
         }
@@ -436,12 +436,12 @@ public class BigIntegerTest
         Assert.True((BigInteger.FromInt64(1) >> 64).Equals(BigInteger.Zero), "1 >> 64");
         Assert.True((BigInteger.FromInt64(1) >> 65).Equals(BigInteger.Zero), "1 >> 65");
         Assert.True((BigInteger.FromInt64(1) >> 1000).Equals(BigInteger.Zero), "1 >> 1000");
-        Assert.True((BigInteger.FromInt64(-1) >> 0).Equals(minusOne), "-1 >> 0");
-        Assert.True((BigInteger.FromInt64(-1) >> 1).Equals(minusOne), "-1 >> 1");
-        Assert.True((BigInteger.FromInt64(-1) >> 63).Equals(minusOne), "-1 >> 63");
-        Assert.True((BigInteger.FromInt64(-1) >> 64).Equals(minusOne), "-1 >> 64");
-        Assert.True((BigInteger.FromInt64(-1) >> 65).Equals(minusOne), "-1 >> 65");
-        Assert.True((BigInteger.FromInt64(-1) >> 1000).Equals(minusOne), "-1 >> 1000");
+        Assert.True((BigInteger.FromInt64(-1) >> 0).Equals(MinusOne), "-1 >> 0");
+        Assert.True((BigInteger.FromInt64(-1) >> 1).Equals(MinusOne), "-1 >> 1");
+        Assert.True((BigInteger.FromInt64(-1) >> 63).Equals(MinusOne), "-1 >> 63");
+        Assert.True((BigInteger.FromInt64(-1) >> 64).Equals(MinusOne), "-1 >> 64");
+        Assert.True((BigInteger.FromInt64(-1) >> 65).Equals(MinusOne), "-1 >> 65");
+        Assert.True((BigInteger.FromInt64(-1) >> 1000).Equals(MinusOne), "-1 >> 1000");
 
         BigInteger a = BigInteger.One;
         BigInteger c = bi3;
@@ -457,53 +457,53 @@ public class BigIntegerTest
             BigInteger d = bi3 >> i;
             Assert.True(c.Equals(d), "c==d");
             c >>= 1;
-            Assert.True((d / two).Equals(c), ">>1 == /2");
+            Assert.True((d / Two).Equals(c), ">>1 == /2");
             Assert.True(c.Sign >= 0, "c non-neg");
 
             BigInteger f = E >> i;
             Assert.True(e.Equals(f), "e==f");
             e >>= 1;
-            Assert.True(((f - one) / two).Equals(e), ">>1 == /2");
+            Assert.True(((f - One) / Two).Equals(e), ">>1 == /2");
             Assert.True(e.Sign == -1, "e negative");
 
-            Assert.True((b >> i).Equals(one), "b >> i");
-            Assert.True((b >> i + 1).Equals(zero), "b >> i+1");
-            Assert.True((b >> i - 1).Equals(two), "b >> i-1");
+            Assert.True((b >> i).Equals(One), "b >> i");
+            Assert.True((b >> i + 1).Equals(Zero), "b >> i+1");
+            Assert.True((b >> i - 1).Equals(Two), "b >> i-1");
         }
     }
 
     [Fact]
     public void ShiftLeftI()
     {
-        Assert.True((one << 0).Equals(one), "1 << 0");
-        Assert.True((one << 1).Equals(two), "1 << 1");
-        Assert.True((one << 63).Equals(BigInteger.Parse("8000000000000000", 16)), "1 << 63");
-        Assert.True((one << 64).Equals(BigInteger.Parse("10000000000000000", 16)), "1 << 64");
-        Assert.True((one << 65).Equals(BigInteger.Parse("20000000000000000", 16)), "1 << 65");
-        Assert.True((minusOne << 0).Equals(minusOne), "-1 << 0");
-        Assert.True((minusOne << 1).Equals(minusTwo), "-1 << 1");
-        Assert.True((minusOne << 63).Equals(BigInteger.Parse("-9223372036854775808")), "-1 << 63");
-        Assert.True((minusOne << 64).Equals(BigInteger.Parse("-18446744073709551616")), "-1 << 64");
-        Assert.True((minusOne << 65).Equals(BigInteger.Parse("-36893488147419103232")), "-1 << 65");
+        Assert.True((One << 0).Equals(One), "1 << 0");
+        Assert.True((One << 1).Equals(Two), "1 << 1");
+        Assert.True((One << 63).Equals(BigInteger.Parse("8000000000000000", 16)), "1 << 63");
+        Assert.True((One << 64).Equals(BigInteger.Parse("10000000000000000", 16)), "1 << 64");
+        Assert.True((One << 65).Equals(BigInteger.Parse("20000000000000000", 16)), "1 << 65");
+        Assert.True((MinusOne << 0).Equals(MinusOne), "-1 << 0");
+        Assert.True((MinusOne << 1).Equals(MinusTwo), "-1 << 1");
+        Assert.True((MinusOne << 63).Equals(BigInteger.Parse("-9223372036854775808")), "-1 << 63");
+        Assert.True((MinusOne << 64).Equals(BigInteger.Parse("-18446744073709551616")), "-1 << 64");
+        Assert.True((MinusOne << 65).Equals(BigInteger.Parse("-36893488147419103232")), "-1 << 65");
 
         BigInteger a = bi3;
-        BigInteger c = minusOne;
+        BigInteger c = MinusOne;
         for (int i = 0; i < 200; i++)
         {
             BigInteger b = bi3 << i;
             Assert.True(a.Equals(b), "a==b");
             Assert.True((a >> i).Equals(bi3), "a >> i == bi3");
             a <<= 1;
-            Assert.True((b * two).Equals(a), "<<1 == *2");
+            Assert.True((b * Two).Equals(a), "<<1 == *2");
             Assert.True(a.Sign >= 0, "a non-neg");
             Assert.True(a.BitCount == b.BitCount, "a.bitCount==b.bitCount");
 
-            BigInteger d = minusOne << i;
+            BigInteger d = MinusOne << i;
             Assert.True(c.Equals(d), "c==d");
             c <<= 1;
-            Assert.True((d * two).Equals(c), "<<1 == *2 negative");
+            Assert.True((d * Two).Equals(c), "<<1 == *2 negative");
             Assert.True(c.Sign == -1, "c negative");
-            Assert.True((d >> i).Equals(minusOne), "d >> i == minusOne");
+            Assert.True((d >> i).Equals(MinusOne), "d >> i == minusOne");
         }
     }
 
@@ -511,18 +511,18 @@ public class BigIntegerTest
     public void MultiplyBigInteger()
     {
         SetUp();
-        Assert.True((aZillion + aZillion + aZillion).Equals((aZillion * BigInteger.Parse("3", 10))),
+        Assert.True((AZillion + AZillion + AZillion).Equals((AZillion * BigInteger.Parse("3", 10))),
                       "Incorrect sum--wanted three zillion");
 
-        Assert.True((zero * zero).Equals(zero), "0*0");
-        Assert.True((zero * one).Equals(zero), "0*1");
-        Assert.True((one * zero).Equals(zero), "1*0");
-        Assert.True((one * one).Equals(one), "1*1");
-        Assert.True((zero * minusOne).Equals(zero), "0*(-1)");
-        Assert.True((minusOne * zero).Equals(zero), "(-1)*0");
-        Assert.True((minusOne * minusOne).Equals(one), "(-1)*(-1)");
-        Assert.True((one * minusOne).Equals(minusOne), "1*(-1)");
-        Assert.True((minusOne * one).Equals(minusOne), "(-1)*1");
+        Assert.True((Zero * Zero).Equals(Zero), "0*0");
+        Assert.True((Zero * One).Equals(Zero), "0*1");
+        Assert.True((One * Zero).Equals(Zero), "1*0");
+        Assert.True((One * One).Equals(One), "1*1");
+        Assert.True((Zero * MinusOne).Equals(Zero), "0*(-1)");
+        Assert.True((MinusOne * Zero).Equals(Zero), "(-1)*0");
+        Assert.True((MinusOne * MinusOne).Equals(One), "(-1)*(-1)");
+        Assert.True((One * MinusOne).Equals(MinusOne), "1*(-1)");
+        Assert.True((MinusOne * One).Equals(MinusOne), "(-1)*1");
 
         TestAllMults(bi1, bi1, bi11);
         TestAllMults(bi2, bi2, bi22);
@@ -564,28 +564,28 @@ public class BigIntegerTest
         TestAllDivs(BigInteger.FromInt64(0xCC0225953CL), BigInteger
                 .FromInt64(0x1B937B765L));
 
-        Assert.Throws<ArithmeticException>(() => largePos / zero);
-        Assert.Throws<ArithmeticException>(() => bi1 / zero);
-        Assert.Throws<ArithmeticException>(() => -bi3 / zero);
-        Assert.Throws<ArithmeticException>(() => zero / zero);
+        Assert.Throws<ArithmeticException>(() => largePos / Zero);
+        Assert.Throws<ArithmeticException>(() => bi1 / Zero);
+        Assert.Throws<ArithmeticException>(() => -bi3 / Zero);
+        Assert.Throws<ArithmeticException>(() => Zero / Zero);
     }
 
     [Fact]
     public void RemainderBigInteger()
     {
-        Assert.Throws<ArithmeticException>(() => BigMath.Remainder(largePos, zero));
-        Assert.Throws<ArithmeticException>(() => BigMath.Remainder(bi1, zero));
-        Assert.Throws<ArithmeticException>(() => BigMath.Remainder(-bi3, zero));
-        Assert.Throws<ArithmeticException>(() => BigMath.Remainder(zero, zero));
+        Assert.Throws<ArithmeticException>(() => BigMath.Remainder(largePos, Zero));
+        Assert.Throws<ArithmeticException>(() => BigMath.Remainder(bi1, Zero));
+        Assert.Throws<ArithmeticException>(() => BigMath.Remainder(-bi3, Zero));
+        Assert.Throws<ArithmeticException>(() => BigMath.Remainder(Zero, Zero));
     }
 
     [Fact]
     public void ModLBigInteger()
     {
-        Assert.Throws<ArithmeticException>(() => largePos % zero);
-        Assert.Throws<ArithmeticException>(() => bi1 % zero);
-        Assert.Throws<ArithmeticException>(() => -bi3 % zero);
-        Assert.Throws<ArithmeticException>(() => zero % zero);
+        Assert.Throws<ArithmeticException>(() => largePos % Zero);
+        Assert.Throws<ArithmeticException>(() => bi1 % Zero);
+        Assert.Throws<ArithmeticException>(() => -bi3 % Zero);
+        Assert.Throws<ArithmeticException>(() => Zero % Zero);
     }
 
     [Fact]
@@ -593,10 +593,10 @@ public class BigIntegerTest
     {
         BigInteger remainder;
 
-        Assert.Throws<ArithmeticException>(() => BigMath.DivideAndRemainder(largePos, zero, out remainder));
-        Assert.Throws<ArithmeticException>(() => BigMath.DivideAndRemainder(bi1, zero, out remainder));
-        Assert.Throws<ArithmeticException>(() => BigMath.DivideAndRemainder(-bi3, zero, out remainder));
-        Assert.Throws<ArithmeticException>(() => BigMath.DivideAndRemainder(zero, zero, out remainder));
+        Assert.Throws<ArithmeticException>(() => BigMath.DivideAndRemainder(largePos, Zero, out remainder));
+        Assert.Throws<ArithmeticException>(() => BigMath.DivideAndRemainder(bi1, Zero, out remainder));
+        Assert.Throws<ArithmeticException>(() => BigMath.DivideAndRemainder(-bi3, Zero, out remainder));
+        Assert.Throws<ArithmeticException>(() => BigMath.DivideAndRemainder(Zero, Zero, out remainder));
     }
 
     [Fact]
@@ -743,12 +743,12 @@ public class BigIntegerTest
 
         Assert.True(q.Equals(quotient), "Divide and DivideAndRemainder do not agree");
         Assert.True(r.Equals(remainder), "Remainder and DivideAndRemainder do not agree");
-        Assert.True(q.Sign != 0 || q.Equals(zero), "signum and equals(zero) do not agree on quotient");
-        Assert.True(r.Sign != 0 || r.Equals(zero), "signum and equals(zero) do not agree on remainder");
+        Assert.True(q.Sign != 0 || q.Equals(Zero), "signum and equals(zero) do not agree on quotient");
+        Assert.True(r.Sign != 0 || r.Equals(Zero), "signum and equals(zero) do not agree on remainder");
         Assert.True(q.Sign == 0 || q.Sign == i1.Sign * i2.Sign, "wrong sign on quotient");
         Assert.True(r.Sign == 0 || r.Sign == i1.Sign, "wrong sign on remainder");
         Assert.True(BigMath.Abs(r).CompareTo(BigMath.Abs(i2)) < 0, "remainder out of range");
-        Assert.True(((BigMath.Abs(q) + one) * BigMath.Abs(i2)).CompareTo(BigMath.Abs(i1)) > 0, "quotient too small");
+        Assert.True(((BigMath.Abs(q) + One) * BigMath.Abs(i2)).CompareTo(BigMath.Abs(i1)) > 0, "quotient too small");
         Assert.True((BigMath.Abs(q) * BigMath.Abs(i2)).CompareTo(BigMath.Abs(i1)) <= 0, "quotient too large");
         BigInteger p = q * i2;
         BigInteger a = p + r;
@@ -769,12 +769,12 @@ public class BigIntegerTest
 
     private void TestDivRanges(BigInteger i)
     {
-        BigInteger bound = i * two;
+        BigInteger bound = i * Two;
         for (BigInteger j = -bound; j.CompareTo(bound) <= 0; j += i)
         {
-            BigInteger innerbound = j + two;
-            BigInteger k = j - two;
-            for (; k.CompareTo(innerbound) <= 0; k += one)
+            BigInteger innerbound = j + Two;
+            BigInteger k = j - Two;
+            for (; k.CompareTo(innerbound) <= 0; k += One)
             {
                 TestDiv(k, i);
             }
