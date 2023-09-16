@@ -175,7 +175,7 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideByZero()
     {
-        String a = "1231212478987482988429808779810457634781384756794987";
+        string a = "1231212478987482988429808779810457634781384756794987";
         int aScale = 15;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = BigDecimal.Create(0L);
@@ -185,9 +185,9 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideExceptionRoundingMode()
     {
-        String a = "1231212478987482988429808779810457634781384756794987";
+        string a = "1231212478987482988429808779810457634781384756794987";
         const int aScale = 15;
-        String b = "747233429293018787918347987234564568";
+        string b = "747233429293018787918347987234564568";
         const int bScale = 10;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -197,9 +197,9 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideExceptionInvalidRoundingMode()
     {
-        String a = "1231212478987482988429808779810457634781384756794987";
+        string a = "1231212478987482988429808779810457634781384756794987";
         const int aScale = 15;
-        String b = "747233429293018787918347987234564568";
+        string b = "747233429293018787918347987234564568";
         const int bScale = 10;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -248,11 +248,11 @@ public class BigDecimalArithmeticTest
     {
         // Divide: local variable exponent is greater than zero
 
-        String a = "1231212478987482988429808779810457634781384756794987";
+        string a = "1231212478987482988429808779810457634781384756794987";
         int aScale = -15;
-        String b = "747233429293018787918347987234564568";
+        string b = "747233429293018787918347987234564568";
         int bScale = 20;
-        String c = "1.647694590099337641891395686052735285121058381E+50";
+        string c = "1.647694590099337641891395686052735285121058381E+50";
         int resScale = -5;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -267,11 +267,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRemainderIsZero()
     {
-        String a = "8311389578904553209874735431110";
+        string a = "8311389578904553209874735431110";
         int aScale = -15;
-        String b = "237468273682987234567849583746";
+        string b = "237468273682987234567849583746";
         int bScale = 20;
-        String c = "3.5000000000000000000000000000000E+36";
+        string c = "3.5000000000000000000000000000000E+36";
         int resScale = -5;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -286,11 +286,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundUpNeg()
     {
-        String a = "-92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "-92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "-1.24390557635720517122423359799284E+53";
+        string c = "-1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -305,11 +305,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundUpPos()
     {
-        String a = "92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "1.24390557635720517122423359799284E+53";
+        string c = "1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -324,11 +324,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundDownNeg()
     {
-        String a = "-92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "-92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "-1.24390557635720517122423359799283E+53";
+        string c = "-1.24390557635720517122423359799283E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -343,11 +343,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundDownPos()
     {
-        String a = "92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "1.24390557635720517122423359799283E+53";
+        string c = "1.24390557635720517122423359799283E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -362,11 +362,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundFloorPos()
     {
-        String a = "92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "1.24390557635720517122423359799283E+53";
+        string c = "1.24390557635720517122423359799283E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -381,11 +381,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundFloorNeg()
     {
-        String a = "-92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "-92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "-1.24390557635720517122423359799284E+53";
+        string c = "-1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -400,11 +400,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundCeilingPos()
     {
-        String a = "92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "1.24390557635720517122423359799284E+53";
+        string c = "1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -419,11 +419,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundCeilingNeg()
     {
-        String a = "-92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "-92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "-1.24390557635720517122423359799283E+53";
+        string c = "-1.24390557635720517122423359799283E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -438,11 +438,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfUpPos()
     {
-        String a = "92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "1.24390557635720517122423359799284E+53";
+        string c = "1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -457,11 +457,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfUpNeg()
     {
-        String a = "-92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "-92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "-1.24390557635720517122423359799284E+53";
+        string c = "-1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -476,11 +476,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfUpPos1()
     {
-        String a = "92948782094488478231212478987482988798104576347813847567949855464535634534563456";
+        string a = "92948782094488478231212478987482988798104576347813847567949855464535634534563456";
         int aScale = -24;
-        String b = "74723342238476237823754692930187879183479";
+        string b = "74723342238476237823754692930187879183479";
         int bScale = 13;
-        String c = "1.2439055763572051712242335979928354832010167729111113605E+76";
+        string c = "1.2439055763572051712242335979928354832010167729111113605E+76";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -495,11 +495,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfUpNeg1()
     {
-        String a = "-92948782094488478231212478987482988798104576347813847567949855464535634534563456";
+        string a = "-92948782094488478231212478987482988798104576347813847567949855464535634534563456";
         int aScale = -24;
-        String b = "74723342238476237823754692930187879183479";
+        string b = "74723342238476237823754692930187879183479";
         int bScale = 13;
-        String c = "-1.2439055763572051712242335979928354832010167729111113605E+76";
+        string c = "-1.2439055763572051712242335979928354832010167729111113605E+76";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -514,11 +514,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfUpNeg2()
     {
-        String a = "-37361671119238118911893939591735";
+        string a = "-37361671119238118911893939591735";
         int aScale = 10;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
-        String c = "-1E+5";
+        string c = "-1E+5";
         int resScale = -5;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -533,11 +533,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfDownPos()
     {
-        String a = "92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "1.24390557635720517122423359799284E+53";
+        string c = "1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -552,11 +552,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfDownNeg()
     {
-        String a = "-92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "-92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "-1.24390557635720517122423359799284E+53";
+        string c = "-1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -571,11 +571,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfDownPos1()
     {
-        String a = "92948782094488478231212478987482988798104576347813847567949855464535634534563456";
+        string a = "92948782094488478231212478987482988798104576347813847567949855464535634534563456";
         int aScale = -24;
-        String b = "74723342238476237823754692930187879183479";
+        string b = "74723342238476237823754692930187879183479";
         int bScale = 13;
-        String c = "1.2439055763572051712242335979928354832010167729111113605E+76";
+        string c = "1.2439055763572051712242335979928354832010167729111113605E+76";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -590,11 +590,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfDownNeg1()
     {
-        String a = "-92948782094488478231212478987482988798104576347813847567949855464535634534563456";
+        string a = "-92948782094488478231212478987482988798104576347813847567949855464535634534563456";
         int aScale = -24;
-        String b = "74723342238476237823754692930187879183479";
+        string b = "74723342238476237823754692930187879183479";
         int bScale = 13;
-        String c = "-1.2439055763572051712242335979928354832010167729111113605E+76";
+        string c = "-1.2439055763572051712242335979928354832010167729111113605E+76";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -609,11 +609,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfDownNeg2()
     {
-        String a = "-37361671119238118911893939591735";
+        string a = "-37361671119238118911893939591735";
         int aScale = 10;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
-        String c = "0E+5";
+        string c = "0E+5";
         int resScale = -5;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -628,11 +628,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfEvenPos()
     {
-        String a = "92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "1.24390557635720517122423359799284E+53";
+        string c = "1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -647,11 +647,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfEvenNeg()
     {
-        String a = "-92948782094488478231212478987482988429808779810457634781384756794987";
+        string a = "-92948782094488478231212478987482988429808779810457634781384756794987";
         int aScale = -24;
-        String b = "7472334223847623782375469293018787918347987234564568";
+        string b = "7472334223847623782375469293018787918347987234564568";
         int bScale = 13;
-        String c = "-1.24390557635720517122423359799284E+53";
+        string c = "-1.24390557635720517122423359799284E+53";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -666,11 +666,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfEvenPos1()
     {
-        String a = "92948782094488478231212478987482988798104576347813847567949855464535634534563456";
+        string a = "92948782094488478231212478987482988798104576347813847567949855464535634534563456";
         int aScale = -24;
-        String b = "74723342238476237823754692930187879183479";
+        string b = "74723342238476237823754692930187879183479";
         int bScale = 13;
-        String c = "1.2439055763572051712242335979928354832010167729111113605E+76";
+        string c = "1.2439055763572051712242335979928354832010167729111113605E+76";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -685,11 +685,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfEvenNeg1()
     {
-        String a = "-92948782094488478231212478987482988798104576347813847567949855464535634534563456";
+        string a = "-92948782094488478231212478987482988798104576347813847567949855464535634534563456";
         int aScale = -24;
-        String b = "74723342238476237823754692930187879183479";
+        string b = "74723342238476237823754692930187879183479";
         int bScale = 13;
-        String c = "-1.2439055763572051712242335979928354832010167729111113605E+76";
+        string c = "-1.2439055763572051712242335979928354832010167729111113605E+76";
         int resScale = -21;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -704,11 +704,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideRoundHalfEvenNeg2()
     {
-        String a = "-37361671119238118911893939591735";
+        string a = "-37361671119238118911893939591735";
         int aScale = 10;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
-        String c = "0E+5";
+        string c = "0E+5";
         int resScale = -5;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -723,11 +723,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimal1()
     {
-        String a = "-37361671119238118911893939591735";
+        string a = "-37361671119238118911893939591735";
         int aScale = 10;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
-        String c = "-5E+4";
+        string c = "-5E+4";
         int resScale = -4;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -742,11 +742,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimal2()
     {
-        String a = "-37361671119238118911893939591735";
+        string a = "-37361671119238118911893939591735";
         int aScale = 10;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = -15;
-        String c = "-5E-26";
+        string c = "-5E-26";
         int resScale = 26;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -761,13 +761,13 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleRoundingModeUp()
     {
-        String a = "-37361671119238118911893939591735";
+        string a = "-37361671119238118911893939591735";
         int aScale = 10;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = -15;
         int newScale = 31;
         RoundingMode rm = RoundingMode.Up;
-        String c = "-5.00000E-26";
+        string c = "-5.00000E-26";
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
         BigDecimal result = BigMath.Divide(aNumber, bNumber, newScale, rm);
@@ -781,13 +781,13 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleRoundingModeDown()
     {
-        String a = "-37361671119238118911893939591735";
+        string a = "-37361671119238118911893939591735";
         int aScale = 10;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
         int newScale = 31;
         RoundingMode rm = RoundingMode.Down;
-        String c = "-50000.0000000000000000000000000000000";
+        string c = "-50000.0000000000000000000000000000000";
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
         BigDecimal result = BigMath.Divide(aNumber, bNumber, newScale, rm);
@@ -801,13 +801,13 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleRoundingModeCeiling()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 100;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
         int newScale = 45;
         RoundingMode rm = RoundingMode.Ceiling;
-        String c = "1E-45";
+        string c = "1E-45";
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
         BigDecimal result = BigMath.Divide(aNumber, bNumber, newScale, rm);
@@ -821,13 +821,13 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleRoundingModeFloor()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 100;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
         int newScale = 45;
         RoundingMode rm = RoundingMode.Floor;
-        String c = "0E-45";
+        string c = "0E-45";
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
         BigDecimal result = BigMath.Divide(aNumber, bNumber, newScale, rm);
@@ -841,13 +841,13 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleRoundingModeHalfUp()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = -51;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 45;
         int newScale = 3;
         RoundingMode rm = RoundingMode.HalfUp;
-        String c = "50000260373164286401361913262100972218038099522752460421" +
+        string c = "50000260373164286401361913262100972218038099522752460421" +
                    "05959924024355721031761947728703598332749334086415670525" +
                    "3761096961.670";
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
@@ -863,13 +863,13 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleRoundingModeHalfDown()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 5;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
         int newScale = 7;
         RoundingMode rm = RoundingMode.HalfDown;
-        String c = "500002603731642864013619132621009722.1803810";
+        string c = "500002603731642864013619132621009722.1803810";
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
         BigDecimal result = BigMath.Divide(aNumber, bNumber, newScale, rm);
@@ -883,13 +883,13 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleRoundingModeHalfEven()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 5;
-        String b = "74723342238476237823787879183470";
+        string b = "74723342238476237823787879183470";
         int bScale = 15;
         int newScale = 7;
         RoundingMode rm = RoundingMode.HalfEven;
-        String c = "500002603731642864013619132621009722.1803810";
+        string c = "500002603731642864013619132621009722.1803810";
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
         BigDecimal result = BigMath.Divide(aNumber, bNumber, newScale, rm);
@@ -903,14 +903,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleMathContextUp()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 15;
-        String b = "748766876876723342238476237823787879183470";
+        string b = "748766876876723342238476237823787879183470";
         int bScale = 10;
         int precision = 21;
         RoundingMode rm = RoundingMode.Up;
         MathContext mc = new(precision, rm);
-        String c = "49897861180.2562512996";
+        string c = "49897861180.2562512996";
         int resScale = 10;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -925,14 +925,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleMathContextDown()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 15;
-        String b = "748766876876723342238476237823787879183470";
+        string b = "748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 21;
         RoundingMode rm = RoundingMode.Down;
         MathContext mc = new(precision, rm);
-        String c = "4.98978611802562512995E+70";
+        string c = "4.98978611802562512995E+70";
         int resScale = -50;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -947,14 +947,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleMathContextCeiling()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 15;
-        String b = "748766876876723342238476237823787879183470";
+        string b = "748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 21;
         RoundingMode rm = RoundingMode.Ceiling;
         MathContext mc = new(precision, rm);
-        String c = "4.98978611802562512996E+70";
+        string c = "4.98978611802562512996E+70";
         int resScale = -50;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -969,14 +969,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleMathContextFloor()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 15;
-        String b = "748766876876723342238476237823787879183470";
+        string b = "748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 21;
         RoundingMode rm = RoundingMode.Floor;
         MathContext mc = new(precision, rm);
-        String c = "4.98978611802562512995E+70";
+        string c = "4.98978611802562512995E+70";
         int resScale = -50;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -991,14 +991,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleMathContextHALF_UP()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 21;
         RoundingMode rm = RoundingMode.HalfUp;
         MathContext mc = new(precision, rm);
-        String c = "2.77923185514690367475E+26";
+        string c = "2.77923185514690367475E+26";
         int resScale = -6;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1013,14 +1013,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleMathContextHalfDown()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 21;
         RoundingMode rm = RoundingMode.HalfDown;
         MathContext mc = new(precision, rm);
-        String c = "2.77923185514690367475E+26";
+        string c = "2.77923185514690367475E+26";
         int resScale = -6;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1035,14 +1035,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideBigDecimalScaleMathContextHalfEven()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 21;
         RoundingMode rm = RoundingMode.HalfEven;
         MathContext mc = new(precision, rm);
-        String c = "2.77923185514690367475E+26";
+        string c = "2.77923185514690367475E+26";
         int resScale = -6;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1071,11 +1071,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideToIntegralValue()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
-        String c = "277923185514690367474770683";
+        string c = "277923185514690367474770683";
         int resScale = 0;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1090,14 +1090,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideToIntegralValueMathContextUp()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 32;
         RoundingMode rm = RoundingMode.Up;
         MathContext mc = new(precision, rm);
-        String c = "277923185514690367474770683";
+        string c = "277923185514690367474770683";
         int resScale = 0;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1112,14 +1112,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideToIntegralValueMathContextDown()
     {
-        String a = "3736186567876876578956958769675785435673453453653543654354365435675671119238118911893939591735";
+        string a = "3736186567876876578956958769675785435673453453653543654354365435675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 75;
         RoundingMode rm = RoundingMode.Down;
         MathContext mc = new(precision, rm);
-        String c = "2.7792318551469036747477068339450205874992634417590178670822889E+62";
+        string c = "2.7792318551469036747477068339450205874992634417590178670822889E+62";
         int resScale = -1;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1134,13 +1134,13 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideAndRemainder1()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
-        String res = "277923185514690367474770683";
+        string res = "277923185514690367474770683";
         int resScale = 0;
-        String rem = "1.3032693871288309587558885943391070087960319452465789990E-15";
+        string rem = "1.3032693871288309587558885943391070087960319452465789990E-15";
         int remScale = 70;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1157,15 +1157,15 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideAndRemainder2()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = -45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
-        String res = "2779231855146903674747706830969461168692256919247547952" +
+        string res = "2779231855146903674747706830969461168692256919247547952" +
                      "2608549363170374005512836303475980101168105698072946555" +
                      "6862849";
         int resScale = 0;
-        String rem = "3.4935796954060524114470681810486417234751682675102093970E-15";
+        string rem = "3.4935796954060524114470681810486417234751682675102093970E-15";
         int remScale = 70;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1182,16 +1182,16 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideAndRemainderMathContextUp()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 70;
         int precision = 75;
         RoundingMode rm = RoundingMode.Up;
         MathContext mc = new(precision, rm);
-        String res = "277923185514690367474770683";
+        string res = "277923185514690367474770683";
         int resScale = 0;
-        String rem = "1.3032693871288309587558885943391070087960319452465789990E-15";
+        string rem = "1.3032693871288309587558885943391070087960319452465789990E-15";
         int remScale = 70;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1208,16 +1208,16 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void DivideAndRemainderMathContextDown()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 20;
         int precision = 15;
         RoundingMode rm = RoundingMode.Down;
         MathContext mc = new(precision, rm);
-        String res = "0E-25";
+        string res = "0E-25";
         int resScale = 25;
-        String rem = "3736186567876.876578956958765675671119238118911893939591735";
+        string rem = "3736186567876.876578956958765675671119238118911893939591735";
         int remScale = 45;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1266,11 +1266,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void Remainder1()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 10;
-        String res = "3736186567876.876578956958765675671119238118911893939591735";
+        string res = "3736186567876.876578956958765675671119238118911893939591735";
         int resScale = 45;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1285,11 +1285,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void Remainder2()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = -45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 10;
-        String res = "1149310942946292909508821656680979993738625937.2065885780";
+        string res = "1149310942946292909508821656680979993738625937.2065885780";
         int resScale = 10;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1304,14 +1304,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void RemainderMathContextHALF_UP()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 10;
         int precision = 15;
         RoundingMode rm = RoundingMode.HalfUp;
         MathContext mc = new(precision, rm);
-        String res = "3736186567876.876578956958765675671119238118911893939591735";
+        string res = "3736186567876.876578956958765675671119238118911893939591735";
         int resScale = 45;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1326,14 +1326,14 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void RemainderMathContextHALF_DOWN()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = -45;
-        String b = "134432345432345748766876876723342238476237823787879183470";
+        string b = "134432345432345748766876876723342238476237823787879183470";
         int bScale = 10;
         int precision = 75;
         RoundingMode rm = RoundingMode.HalfDown;
         MathContext mc = new(precision, rm);
-        String res = "1149310942946292909508821656680979993738625937.2065885780";
+        string res = "1149310942946292909508821656680979993738625937.2065885780";
         int resScale = 10;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal bNumber = new(BigInteger.Parse(b), bScale);
@@ -1348,12 +1348,12 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void RoundMathContextHALF_DOWN()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = -45;
         int precision = 75;
         RoundingMode rm = RoundingMode.HalfDown;
         MathContext mc = new(precision, rm);
-        String res = "3.736186567876876578956958765675671119238118911893939591735E+102";
+        string res = "3.736186567876876578956958765675671119238118911893939591735E+102";
         int resScale = -45;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal result = BigMath.Round(aNumber, mc);
@@ -1367,12 +1367,12 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void RoundMathContextHALF_UP()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
         int precision = 15;
         RoundingMode rm = RoundingMode.HalfUp;
         MathContext mc = new(precision, rm);
-        String res = "3736186567876.88";
+        string res = "3736186567876.88";
         int resScale = 2;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal result = BigMath.Round(aNumber, mc);
@@ -1386,12 +1386,12 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void RoundMathContextPrecision0()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
         int precision = 0;
         RoundingMode rm = RoundingMode.HalfUp;
         MathContext mc = new(precision, rm);
-        String res = "3736186567876.876578956958765675671119238118911893939591735";
+        string res = "3736186567876.876578956958765675671119238118911893939591735";
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal result = BigMath.Round(aNumber, mc);
         Assert.Equal(res, result.ToString());
@@ -1405,11 +1405,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void UlpPos()
     {
-        String a = "3736186567876876578956958765675671119238118911893939591735";
+        string a = "3736186567876876578956958765675671119238118911893939591735";
         int aScale = -45;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal result = BigMath.Ulp(aNumber);
-        String res = "1E+45";
+        string res = "1E+45";
         int resScale = -45;
         Assert.Equal(res, result.ToString());
         Assert.Equal(resScale, result.Scale);
@@ -1421,11 +1421,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void UlpNeg()
     {
-        String a = "-3736186567876876578956958765675671119238118911893939591735";
+        string a = "-3736186567876876578956958765675671119238118911893939591735";
         int aScale = 45;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal result = BigMath.Ulp(aNumber);
-        String res = "1E-45";
+        string res = "1E-45";
         int resScale = 45;
         Assert.Equal(res, result.ToString());
         Assert.Equal(resScale, result.Scale);
@@ -1437,11 +1437,11 @@ public class BigDecimalArithmeticTest
     [Fact]
     public void UlpZero()
     {
-        String a = "0";
+        string a = "0";
         int aScale = 2;
         BigDecimal aNumber = new(BigInteger.Parse(a), aScale);
         BigDecimal result = BigMath.Ulp(aNumber);
-        String res = "0.01";
+        string res = "0.01";
         int resScale = 2;
         Assert.Equal(res, result.ToString());
         Assert.Equal(resScale, result.Scale);

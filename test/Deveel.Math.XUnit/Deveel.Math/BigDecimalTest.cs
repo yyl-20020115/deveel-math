@@ -73,7 +73,7 @@ public class BigDecimalTest
     {
         /*
 		 * BigDecimal does not support a + sign in the exponent when converting
-		 * from a String
+		 * from a string
 		 */
         BigDecimal.Parse("+23e-0");
         BigDecimal.Parse("-23e+0");
@@ -653,7 +653,7 @@ public class BigDecimalTest
     [Fact]
     public void MathContextConstruction()
     {
-        String a = "-12380945E+61";
+        string a = "-12380945E+61";
         var aNumber = BigDecimal.Parse(a);
         int precision = 6;
         RoundingMode rm = RoundingMode.HalfDown;

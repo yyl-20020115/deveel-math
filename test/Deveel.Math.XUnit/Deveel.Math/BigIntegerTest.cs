@@ -24,7 +24,7 @@ public class BigIntegerTest
 
     private readonly BigInteger ten = BigInteger.Parse("10", 10);
 
-    private BigInteger sixteen = BigInteger.Parse("16", 10);
+    private readonly BigInteger sixteen = BigInteger.Parse("16", 10);
 
     public BigIntegerTest(BigInteger sixteen)
     {
