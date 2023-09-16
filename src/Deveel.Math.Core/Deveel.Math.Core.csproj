@@ -19,6 +19,7 @@
     <VersionSuffix>$(VersionSuffix)</VersionSuffix>
     <AssemblyVersion>1.6.1.0</AssemblyVersion>
     <PackageIconUrl>https://raw.githubusercontent.com/deveel/deveel-math/master/nuget/icon.png</PackageIconUrl>
+    <LangVersion>Preview</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
